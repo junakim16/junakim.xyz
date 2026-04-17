@@ -7,52 +7,110 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="#" class="logo">JK</a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-        </div>
+
+    <header class="header">
+        <pre class="ascii-name" aria-label="Juna Kim">
+     ██╗██╗   ██╗███╗   ██╗ █████╗
+     ██║██║   ██║████╗  ██║██╔══██╗
+     ██║██║   ██║██╔██╗ ██║███████║
+██   ██║██║   ██║██║╚██╗██║██╔══██║
+╚█████╔╝╚██████╔╝██║ ╚████║██║  ██║
+ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝
+        </pre>
+        <p class="subtitle">Creative &amp; designer based in [City] &mdash; crafting thoughtful digital experiences.</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <section class="hero">
-        <h1>Juna Kim</h1>
-        <p class="tagline">Welcome to my corner of the internet.</p>
-    </section>
+    <main>
 
-    <section id="about" class="section">
-        <h2>About</h2>
-        <p>Hi, I'm Juna. This is my personal site — a place for my work, thoughts, and whatever else I want to share.</p>
-    </section>
+        <section id="work" class="section">
+            <h2 class="section-label">Selected Work</h2>
 
-    <section id="work" class="section">
-        <h2>Work</h2>
-        <div class="work-grid">
-            <div class="work-item">
-                <h3>Project One</h3>
-                <p>Description coming soon.</p>
+            <div class="project">
+                <div class="project-year">2026</div>
+                <div class="project-info">
+                    <h3><a href="#">Project Name</a></h3>
+                    <p>Brief description of the project &mdash; what it was, what you did, and the impact it had. Replace this with your actual work.</p>
+                    <span class="project-tags">Design &middot; Development</span>
+                </div>
             </div>
-            <div class="work-item">
-                <h3>Project Two</h3>
-                <p>Description coming soon.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Want to get in touch? Reach out below.</p>
-        <div class="links">
-            <a href="mailto:hello@junakim.xyz">Email</a>
-        </div>
-    </section>
+            <div class="project">
+                <div class="project-year">2025</div>
+                <div class="project-info">
+                    <h3><a href="#">Another Project</a></h3>
+                    <p>A short summary of this project. Think one to two sentences that capture the essence of the work.</p>
+                    <span class="project-tags">Branding &middot; Art Direction</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-year">2025</div>
+                <div class="project-info">
+                    <h3><a href="#">Creative Work</a></h3>
+                    <p>Describe the project here. What problem did it solve? What made it special?</p>
+                    <span class="project-tags">UI/UX &middot; Strategy</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-year">2024</div>
+                <div class="project-info">
+                    <h3><a href="#">Earlier Project</a></h3>
+                    <p>Another placeholder for your work. Add as many or as few as you like.</p>
+                    <span class="project-tags">Web Design &middot; Creative Direction</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-year">2023</div>
+                <div class="project-info">
+                    <h3><a href="#">First Big Thing</a></h3>
+                    <p>Where it all started. Tell the story of an early project that shaped who you are today.</p>
+                    <span class="project-tags">Personal &middot; Exploration</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-label">About</h2>
+            <div class="about-content">
+                <p>Hi, I'm Juna Kim. I'm a [your title] based in [your city]. I care about [what you care about] and I'm currently [what you're doing now].</p>
+                <p>Previously, I've [past experience]. When I'm not working, you'll find me [hobbies/interests].</p>
+                <p>This site is a living document &mdash; a place for my work, ideas, and whatever else I want to share with the world.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-label">Contact</h2>
+            <div class="contact-content">
+                <p>Want to collaborate or just say hi?</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@junakim.xyz">hello@junakim.xyz</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2026 Juna Kim</p>
+        <pre class="ascii-footer">
+~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+*  made with care  *  juna kim  *  2026  *  :-)  *
+~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+        </pre>
     </footer>
+
 </body>
 </html>
