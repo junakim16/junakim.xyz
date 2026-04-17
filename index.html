@@ -73,9 +73,10 @@
         <div class="carousel" id="carousel">
             <div class="carousel-inner">
 
-                <article class="project-card project-soon" data-color="pink">
+                <article class="project-card project-soon" data-color="pink" data-project="1">
                     <div class="card-thumb">
                         <div class="thumb-img">✿</div>
+                        <div class="card-open">open →</div>
                     </div>
                     <div class="card-meta">
                         <span class="card-num">coming soon</span>
@@ -88,9 +89,10 @@
                     </div>
                 </article>
 
-                <article class="project-card project-soon" data-color="lavender">
+                <article class="project-card project-soon" data-color="lavender" data-project="2">
                     <div class="card-thumb">
                         <div class="thumb-img">❀</div>
+                        <div class="card-open">open →</div>
                     </div>
                     <div class="card-meta">
                         <span class="card-num">coming soon</span>
@@ -103,9 +105,10 @@
                     </div>
                 </article>
 
-                <article class="project-card project-soon" data-color="mint">
+                <article class="project-card project-soon" data-color="mint" data-project="3">
                     <div class="card-thumb">
                         <div class="thumb-img">✦</div>
+                        <div class="card-open">open →</div>
                     </div>
                     <div class="card-meta">
                         <span class="card-num">coming soon</span>
@@ -224,6 +227,80 @@
     <div class="sparkle" style="top:28%; left:88%;">✧</div>
     <div class="sparkle" style="top:60%; left:4%;">❀</div>
     <div class="sparkle" style="top:78%; left:92%;">✦</div>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card" role="document">
+            <button class="modal-close" aria-label="close" data-close>×</button>
+
+            <div class="modal-media" data-color="pink">
+                <div class="modal-media-inner">
+                    <div class="modal-media-icon">✿</div>
+                    <p class="modal-media-hint">add images or videos here</p>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <div class="modal-meta">
+                    <span class="modal-num" id="modal-num">01 / 03</span>
+                    <span class="modal-year" id="modal-year">2026</span>
+                </div>
+                <h2 class="modal-title" id="modal-title">project title</h2>
+                <p class="modal-role" id="modal-role"></p>
+
+                <div class="modal-description" id="modal-description">
+                    <p>a longer description of the project goes here &mdash; context, role, craft, impact.</p>
+                </div>
+
+                <div class="modal-tags" id="modal-tags"></div>
+
+                <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener">view project →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project data (editable per project) -->
+    <script id="project-data" type="application/json">
+    {
+        "1": {
+            "color": "pink",
+            "icon": "✿",
+            "num": "01 / 03",
+            "year": "2026",
+            "title": "something lovely",
+            "role": "in progress",
+            "description": "<p>a longer description will live here once this project is ready to share. think: context, what you made, what you learned, what you loved about it.</p><p>for now, imagine something soft, thoughtful, and just a little bit sparkly ✿</p>",
+            "tags": ["in progress", "placeholder"],
+            "link": "#",
+            "linkLabel": "view project →"
+        },
+        "2": {
+            "color": "lavender",
+            "icon": "❀",
+            "num": "02 / 03",
+            "year": "2026",
+            "title": "something special",
+            "role": "in progress",
+            "description": "<p>another placeholder for a future project. swap the description, media, and link once it's live.</p><p>this slot is ready for photos, videos, case-study writing, whatever feels right.</p>",
+            "tags": ["in progress", "placeholder"],
+            "link": "#",
+            "linkLabel": "view project →"
+        },
+        "3": {
+            "color": "mint",
+            "icon": "✦",
+            "num": "03 / 03",
+            "year": "2026",
+            "title": "something sweet",
+            "role": "in progress",
+            "description": "<p>a third project waiting to be born. drop in images, embed a video, write as much or as little as you want.</p>",
+            "tags": ["in progress", "placeholder"],
+            "link": "#",
+            "linkLabel": "view project →"
+        }
+    }
+    </script>
 
     <script src="script.js"></script>
 </body>
