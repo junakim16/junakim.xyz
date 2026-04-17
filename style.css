@@ -465,7 +465,7 @@ em {
 }
 
 /* ================================
-   About
+   About + Experience
    ================================ */
 
 .about-section {
@@ -477,8 +477,8 @@ em {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 5rem;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 6rem;
     align-items: start;
 }
 
@@ -488,17 +488,158 @@ em {
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.035em;
+    margin-bottom: 2.5rem;
 }
 
-.about-right p {
+.about-bio p {
     font-size: 1.05rem;
     color: var(--ink-soft);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
 
-.about-right p:last-child {
+.about-bio p:last-child {
     margin-bottom: 0;
+}
+
+/* Experience list */
+.experience {
+    position: sticky;
+    top: 120px;
+    padding: 2rem 2.25rem;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.exp-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pink-dark);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.exp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* vertical connecting line */
+.exp-list::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 64px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--pink) 0%, var(--lavender) 50%, var(--mint) 100%);
+    opacity: 0.4;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 1.75rem;
+    padding: 1rem 0 1.5rem;
+    position: relative;
+}
+
+.exp-item:last-child {
+    padding-bottom: 0;
+}
+
+/* dot on the timeline */
+.exp-item::before {
+    content: "";
+    position: absolute;
+    top: 1.4rem;
+    left: 60px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--pink-dark);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--pink);
+    z-index: 1;
+}
+
+.exp-item.current::before {
+    background: var(--pink-dark);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 2px var(--pink); }
+    50% { box-shadow: 0 0 0 6px rgba(244, 184, 204, 0.35); }
+}
+
+.exp-item.education::before {
+    background: var(--lavender);
+    box-shadow: 0 0 0 2px #dfd0f0;
+}
+
+.exp-year {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-faded);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.15rem;
+    line-height: 1.4;
+}
+
+.exp-year .exp-now {
+    color: var(--pink-dark);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.exp-body h3 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.exp-body p {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.exp-body .exp-brand {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--ink-faded);
+    letter-spacing: 0.02em;
+    font-style: italic;
+}
+
+/* coming-soon project cards (softer) */
+.project-card.project-soon {
+    opacity: 0.82;
+}
+
+.project-card.project-soon .card-num {
+    color: var(--pink-dark);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.02em;
 }
 
 /* ================================
@@ -665,7 +806,25 @@ em {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+    }
+
+    .experience {
+        position: static;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .exp-list::before {
+        left: 56px;
+    }
+
+    .exp-item {
+        grid-template-columns: 44px 1fr;
+        gap: 1.5rem;
+    }
+
+    .exp-item::before {
+        left: 52px;
     }
 
     .site-footer {
