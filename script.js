@@ -1,26 +1,70 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var titles = document.querySelectorAll('#titles li');
-    var texts = document.querySelectorAll('#texts li');
-    var previews = document.querySelectorAll('#preview .preview-item');
+// 🌸 juna kim — interactions
 
-    titles.forEach(function (title) {
-        title.addEventListener('click', function (e) {
-            e.preventDefault();
-            var id = this.id;
+document.addEventListener('DOMContentLoaded', () => {
 
-            // Update selected title
-            titles.forEach(function (t) { t.classList.remove('selected'); });
-            title.classList.add('selected');
+    const carousel = document.getElementById('carousel');
+    const buttons = document.querySelectorAll('.scroll-btn');
 
-            // Show matching text
-            texts.forEach(function (t) { t.style.display = 'none'; });
-            var matchingText = document.querySelector('#texts li#' + id);
-            if (matchingText) matchingText.style.display = 'list-item';
-
-            // Show matching preview
-            previews.forEach(function (p) { p.style.display = 'none'; });
-            var matchingPreview = document.querySelector('#preview .' + id);
-            if (matchingPreview) matchingPreview.style.display = 'block';
+    // ----- Arrow button scroll -----
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const dir = parseInt(btn.dataset.dir, 10);
+            const card = carousel.querySelector('.project-card');
+            const cardWidth = card.offsetWidth + 24; // card + gap
+            carousel.scrollBy({
+                left: cardWidth * dir,
+                behavior: 'smooth',
+            });
         });
     });
+
+    // ----- Mouse wheel horizontal scroll -----
+    carousel.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            carousel.scrollBy({
+                left: e.deltaY,
+                behavior: 'auto',
+            });
+        }
+    }, { passive: false });
+
+    // ----- Drag to scroll -----
+    let isDown = false;
+    let startX, scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // ----- Keyboard navigation -----
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            buttons[1]?.click();
+        } else if (e.key === 'ArrowLeft') {
+            buttons[0]?.click();
+        }
+    });
+
 });
