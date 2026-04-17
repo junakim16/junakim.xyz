@@ -32,13 +32,14 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--ink);
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "ss02";
 }
 
 ::selection {
@@ -52,9 +53,9 @@ a {
 }
 
 em {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--pink-dark);
 }
 
@@ -79,8 +80,9 @@ em {
 }
 
 .site-header .logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.3rem;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.01em;
 }
@@ -153,11 +155,11 @@ em {
 }
 
 .hero-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(3rem, 11vw, 9.5rem);
     line-height: 0.95;
-    font-weight: 400;
-    letter-spacing: -0.03em;
+    font-weight: 900;
+    letter-spacing: -0.045em;
     margin-bottom: 3rem;
 }
 
@@ -225,9 +227,10 @@ em {
     display: inline-flex;
     gap: 2rem;
     animation: marquee 30s linear infinite;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-style: italic;
-    font-size: 1.3rem;
+    font-weight: 500;
+    font-size: 1.1rem;
     color: var(--pink-dark);
 }
 
@@ -275,10 +278,10 @@ em {
 }
 
 .work-header h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.035em;
     line-height: 1;
 }
 
@@ -394,7 +397,8 @@ em {
 .thumb-img {
     font-size: 5rem;
     color: rgba(255, 255, 255, 0.85);
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
     transition: transform 0.5s ease;
 }
 
@@ -413,10 +417,10 @@ em {
 }
 
 .project-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.75rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
     color: var(--ink);
 }
@@ -471,11 +475,11 @@ em {
 }
 
 .about-left h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
 }
 
 .about-right p {
@@ -506,11 +510,11 @@ em {
 }
 
 .contact-section h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(2.5rem, 6vw, 5rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     max-width: 900px;
     margin: 0 auto 3rem;
 }
@@ -521,8 +525,10 @@ em {
 
 .contact-email {
     display: inline-block;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
     color: var(--bg);
     border-bottom: 2px solid var(--pink);
     padding-bottom: 0.3rem;
