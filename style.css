@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #1a1a1a;
+}
+
+.hero {
+    padding: 8rem 4rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.section {
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-bottom: 1.5rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.work-item {
+    padding: 2rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.work-item:hover {
+    border-color: #ccc;
+}
+
+.work-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.work-item p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+}
+
+.links a:hover {
+    border-color: #1a1a1a;
+}
+
+footer {
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .hero {
+        padding: 5rem 2rem 4rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 3rem 2rem;
+    }
+
+    footer {
+        padding: 3rem 2rem;
+    }
+}
