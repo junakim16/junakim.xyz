@@ -10,7 +10,40 @@
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="locked">
+
+    <script>
+        // Lock immediately before content paints. If already unlocked this session, unlock.
+        (function() {
+            try {
+                if (sessionStorage.getItem('juna-unlocked') === 'yes') {
+                    document.body.classList.remove('locked');
+                }
+            } catch (e) { /* ignore storage errors */ }
+        })();
+    </script>
+
+    <!-- Password Gate -->
+    <div class="gate" id="gate" aria-hidden="false">
+        <div class="gate-inner">
+            <div class="gate-flower">✿</div>
+            <h1 class="gate-title">a little <em>hello</em></h1>
+            <p class="gate-sub">this corner of the internet is password-protected. type the secret word to come in ↓</p>
+            <form class="gate-form" id="gate-form" autocomplete="off">
+                <input
+                    type="password"
+                    id="gate-input"
+                    class="gate-input"
+                    placeholder="password"
+                    aria-label="password"
+                    autofocus
+                />
+                <button type="submit" class="gate-btn">unlock ✿</button>
+            </form>
+            <p class="gate-error" id="gate-error" aria-live="polite"></p>
+        </div>
+    </div>
+
 
     <!-- Header / Nav -->
     <header class="site-header">

@@ -3,6 +3,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------
+       Password Gate
+       -------------------------------- */
+    const gate = document.getElementById('gate');
+    const gateForm = document.getElementById('gate-form');
+    const gateInput = document.getElementById('gate-input');
+    const gateError = document.getElementById('gate-error');
+    const PASSWORD = 'junajunajuna';
+
+    // If already unlocked this session, hide gate immediately
+    try {
+        if (sessionStorage.getItem('juna-unlocked') === 'yes') {
+            gate.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('locked');
+        }
+    } catch (e) { /* ignore */ }
+
+    if (gateForm) {
+        gateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = (gateInput.value || '').trim().toLowerCase();
+            if (val === PASSWORD) {
+                try { sessionStorage.setItem('juna-unlocked', 'yes'); } catch (e) {}
+                gate.setAttribute('aria-hidden', 'true');
+                gateError.textContent = '';
+                // Reload so all page scripts (carousel/modal) initialise cleanly
+                setTimeout(() => { location.reload(); }, 450);
+            } else {
+                gateError.textContent = 'hmm, that\'s not it — try again ✿';
+                gate.classList.remove('shake');
+                // force reflow so animation replays
+                void gate.offsetWidth;
+                gate.classList.add('shake');
+                gateInput.value = '';
+                gateInput.focus();
+            }
+        });
+    }
+
+    // Stop further scripts if still locked
+    if (document.body.classList.contains('locked')) return;
+
+    /* --------------------------------
        Carousel controls
        -------------------------------- */
     const carousel = document.getElementById('carousel');
